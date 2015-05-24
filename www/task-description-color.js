@@ -2,7 +2,7 @@ function TaskDescriptionColor() {
 }
 
 TaskDescriptionColor.prototype.keepAwake = function (color, successCallback, errorCallback) {
-  cordova.exec(successCallback, errorCallback, "TaskDescriptionColor", "keepAwake", [color]);
+  cordova.exec(successCallback, errorCallback, "TaskDescriptionColor", "setColor", [color]);
 };
 
 TaskDescriptionColor.install = function () {
