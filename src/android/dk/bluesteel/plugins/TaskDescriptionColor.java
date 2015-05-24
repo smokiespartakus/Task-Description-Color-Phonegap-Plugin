@@ -6,6 +6,7 @@ import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
+import com.android.systemui.recent.TaskDescription;
 
 public class TaskDescriptionColor extends CordovaPlugin {
 
