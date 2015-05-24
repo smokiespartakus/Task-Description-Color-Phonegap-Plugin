@@ -6,7 +6,7 @@ import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
-import com.android.systemui.recent.TaskDescription;
+import android.app.ActivityManager;
 
 public class TaskDescriptionColor extends CordovaPlugin {
 
@@ -20,9 +20,13 @@ public class TaskDescriptionColor extends CordovaPlugin {
             new Runnable() {
               public void run() {
                 int myColor = 0xffff00ff;
-                TaskDescription taskDesc = new TaskDescription(null, null, myColor);
-                cordova.getActivity().setTaskDescription(taskDesc);
-                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
+                try {
+                  TaskDescription taskDesc = new TaskDescription(null, null, myColor);
+                  cordova.getActivity().setTaskDescription(taskDesc);
+                  callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
+                } catch(Exception e) {
+                  callbackContext.error("An error occurred setting color - old phone?");
+                }
               }
             });
         return true;
