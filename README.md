@@ -8,7 +8,7 @@ $ phonegap plugin add https://github.com/smokiespartakus/Task-Description-Color-
 
 ```xml
 <!-- for Android -->
-<feature name="Insomnia">
+<feature name="TaskDescriptionColor">
   <param name="android-package" value="dk.bluesteel.plugins.TaskDescriptionColor" />
 </feature>
 ```
