@@ -3,7 +3,7 @@
 
 ## Installation
 ```
-$ phonegap local plugin add https://github.com/smokiespartakus/Task-Description-Color-Phonegap-Plugin.git
+$ phonegap plugin add https://github.com/smokiespartakus/Task-Description-Color-Phonegap-Plugin.git
 ```
 
 ```xml
