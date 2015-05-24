@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="dk.bluesteel.plugins.task-description-color"
+        version="1.0.0">
+
+  <name>Task Description Color</name>
+
+  <description>
+    Change the color of the description bar in android (5+) multi task view
+  </description>
+
+  <license>MIT</license>
+
+  <engines>
+    <engine name="cordova" version=">=3.0.0"/>
+  </engines>
+
+  <js-module src="www/task-description-color.js" name="TaskDescriptionColor">
+    <clobbers target="window.plugins.TaskDescriptionColor" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Insomnia">
+        <param name="android-package" value="dk.bluesteel.plugins.TaskDescriptionColor" />
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/dk/bluesteel/plugins/TaskDescriptionColor.java" target-dir="src/dk/bluesteel/plugins"/>
+  </platform>
+
+</plugin>
