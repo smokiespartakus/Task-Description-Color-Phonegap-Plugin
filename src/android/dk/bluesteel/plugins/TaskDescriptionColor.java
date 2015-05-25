@@ -11,7 +11,6 @@ import android.os.Build;
 import android.graphics.Color;
 import android.view.Window;
 import android.view.View;
-import android.view.WindowManager;
 import android.content.Context;
 
 public class TaskDescriptionColor extends CordovaPlugin {
@@ -22,18 +21,16 @@ public class TaskDescriptionColor extends CordovaPlugin {
   public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
     try {
       if (SET_COLOR.equals(action)) {
-        //final int color = Color.parseColor("#000000");
-        final int color;
-        try {
-          color = Color.parseColor(args.getString(0));
-        } catch(Exception e) {
-
-          //color = Color.parseColor("#000000");
-        }
+        final JSONArray args2 = args;
         cordova.getActivity().runOnUiThread(
             new Runnable() {
               public void run() {
-                
+        	  int color = Color.parseColor("#000000");
+              try {
+              	color = Color.parseColor(args2.getString(0));
+              } catch(Exception e) {
+
+              }
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                   cordova.getActivity().setTaskDescription(
                     new ActivityManager.TaskDescription(null, null, color)
