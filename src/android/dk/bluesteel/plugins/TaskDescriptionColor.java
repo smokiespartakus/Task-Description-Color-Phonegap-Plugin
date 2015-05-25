@@ -22,21 +22,19 @@ public class TaskDescriptionColor extends CordovaPlugin {
   public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
     try {
       if (SET_COLOR.equals(action)) {
+        //final int color = Color.parseColor("#000000");
+        final int color;
+        try {
+          color = Color.parseColor(args.getString(0));
+        } catch(Exception e) {
+
+          //color = Color.parseColor("#000000");
+        }
         cordova.getActivity().runOnUiThread(
             new Runnable() {
               public void run() {
-                int color = Color.parseColor("#FF00FF");
+                
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-/*                  
-                  ActivityManager activityManager = (ActivityManager) cordova.getActivity().getSystemService(Context.ACTIVITY_SERVICE);
-                  for(ActivityManager.AppTask appTask : activityManager.getAppTasks()) {
-                      if(appTask.getTaskInfo().id == cordova.getActivity().getTaskId()) {
-                          ActivityManager.TaskDescription description = appTask.getTaskInfo().taskDescription;
-                          cordova.getActivity().setTaskDescription(new ActivityManager.TaskDescription(description.getLabel(), description.getIcon(), color));
-                      }
-                  }
-  */                
-                  
                   cordova.getActivity().setTaskDescription(
                     new ActivityManager.TaskDescription(null, null, color)
                     );
