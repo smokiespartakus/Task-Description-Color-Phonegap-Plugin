@@ -24,7 +24,7 @@
   <platform name="android">
 
     <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="Insomnia">
+      <feature name="TaskDescriptionColor">
         <param name="android-package" value="dk.bluesteel.plugins.TaskDescriptionColor" />
       </feature>
     </config-file>
