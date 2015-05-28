@@ -14,14 +14,15 @@ $ phonegap plugin add https://github.com/smokiespartakus/Task-Description-Color-
 ```
 
 ## Usage
+After deviceready, run this:
 ```
-		window.plugins.TaskDescriptionColor.setColor('#00B6E4', function(x) {
-        	// success
-			alert('success');
-		}, function(x) {
-			alert('fail');
-			// fail
-		}); 
+window.plugins.TaskDescriptionColor.setColor('#FF00FF', function(x) {
+// success
+    alert('success: ' + x);
+}, function(x) {
+// fail
+    alert('fail: ' + x);
+}); 
 ```
 ## License
 
