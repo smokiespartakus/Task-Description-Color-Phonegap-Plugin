@@ -12,6 +12,17 @@ $ phonegap plugin add https://github.com/smokiespartakus/Task-Description-Color-
   <param name="android-package" value="dk.bluesteel.plugins.TaskDescriptionColor" />
 </feature>
 ```
+
+## Usage
+```
+		window.plugins.TaskDescriptionColor.setColor('#00B6E4', function(x) {
+        	// success
+			alert('success');
+		}, function(x) {
+			alert('fail');
+			// fail
+		}); 
+```
 ## License
 
 [The MIT License (MIT)](http://www.opensource.org/licenses/mit-license.html)
